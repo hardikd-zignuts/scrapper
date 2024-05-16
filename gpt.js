@@ -17,9 +17,10 @@ app.post('/chat', async (req, res) => {
     }
 
     const browser = await puppeteer.launch({
-        headless: false
+        headless: true,
+        executablePath: 'https://drive.google.com/uc?export=download&id=1mmfNb44QroCrImR-2FHSIujjwamp9Lmy',
+        
     });
-
     try {
         const page = await browser.newPage();
         await page.goto('https://chatgpt.com/', {
